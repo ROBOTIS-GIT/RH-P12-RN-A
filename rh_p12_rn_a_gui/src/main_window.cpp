@@ -65,7 +65,7 @@ MainWindow::MainWindow(int argc, char** argv, QWidget *parent)
   ui.position_mode_radio->click();
 
   //ui.goal_current_slider->setValue(qnode.getItemValue("goal_current"));
-  ui.goal_current_slider->setValue(30);
+  ui.goal_current_slider->setValue(350);
   ui.goal_vel_slider->setValue(qnode.getItemValue("goal_velocity"));
   ui.goal_pwm_slider->setValue(qnode.getItemValue("goal_pwm"));
   ui.goal_position_slider->setValue(qnode.getItemValue("goal_position"));
