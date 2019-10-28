@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rh_p12_rn_a</name>
+  <version>0.1.0</version>
+  <description>
+    ROS messages packages for the ROBOTIS RH-P12-RN(A) (meta package)
+  </description>
+  <license>Apache 2.0</license>
+  <author email="zerom@robotis.com">Zerom</author>
+  <maintainer email="pyo@robotis.com">Pyo</maintainer>
+  <url type="website">http://wiki.ros.org/rh_p12_rn</url>
+  <url type="emanual">http://emanual.robotis.com/docs/en/platform/rh_p12_rna/</url>
+  <url type="repository">https://github.com/ROBOTIS-GIT/RH-P12-RN-A</url>
+  <url type="bugtracker">https://github.com/ROBOTIS-GIT/RH-P12-RN-A/issues</url>
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>rh_p12_rn_a_base_module</exec_depend>
+  <exec_depend>rh_p12_rn_a_base_module_msgs</exec_depend>
+  <exec_depend>rh_p12_rn_a_description</exec_depend>
+  <exec_depend>rh_p12_rn_a_gazebo</exec_depend>
+  <exec_depend>rh_p12_rn_a_gui</exec_depend>
+  <exec_depend>rh_p12_rn_a_manager</exec_depend>
+  <export><metapackage/></export>
+</package>

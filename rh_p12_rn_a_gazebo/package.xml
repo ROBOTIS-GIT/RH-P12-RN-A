@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rh_p12_rn_a_gazebo</name>
+  <version>0.1.0</version>
+  <description>
+    This package provides basic message pub and launch file to use RH-P12-RN on Gazebo
+  </description>
+  <license>Apache 2.0</license>
+  <author email="sch@robotis.com">SCH</author>
+  <author email="zerom@robotis.com">Zerom</author>
+  <maintainer email="pyo@robotis.com">Pyo</maintainer>
+  <url type="website">http://wiki.ros.org/rh_p12_rn_a_gazebo</url>
+  <url type="emanual">http://emanual.robotis.com/docs/en/platform/rh_p12_rna/</url>
+  <url type="repository">https://github.com/ROBOTIS-GIT/RH-P12-RN-A</url>
+  <url type="bugtracker">https://github.com/ROBOTIS-GIT/RH-P12-RN-A/issues</url>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+</package>
