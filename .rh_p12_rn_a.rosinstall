@@ -1,0 +1,12 @@
+- git:
+    local-name: DynamixelSDK
+    uri: 'https://github.com/ROBOTIS-GIT/DynamixelSDK.git'
+    version: master
+- git:
+    local-name: ROBOTIS-Framework
+    uri: 'https://github.com/ROBOTIS-GIT/ROBOTIS-Framework.git'
+    version: master
+- git:
+    local-name: ROBOTIS-Framework-msgs
+    uri: 'https://github.com/ROBOTIS-GIT/ROBOTIS-Framework-msgs.git'
+    version: master
