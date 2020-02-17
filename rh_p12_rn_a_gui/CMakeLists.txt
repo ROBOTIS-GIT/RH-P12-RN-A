@@ -4,6 +4,9 @@
 cmake_minimum_required(VERSION 2.8.0)
 project(rh_p12_rn_a_gui)
 
+## Compile as C++11, supported in ROS Kinetic and newer
+add_compile_options(-std=c++11)
+
 ################################################################################
 # Find catkin packages and libraries for catkin and system dependencies
 ################################################################################
