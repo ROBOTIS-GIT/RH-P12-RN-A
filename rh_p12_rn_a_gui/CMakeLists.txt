@@ -11,7 +11,11 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   robotis_controller_msgs
   rh_p12_rn_a_base_module_msgs
-  qt_build
+)
+
+find_package(Qt5 REQUIRED
+  COMPONENTS
+    Widgets
 )
 
 ################################################################################
@@ -31,31 +35,52 @@ find_package(catkin REQUIRED COMPONENTS
 ################################################################################
 catkin_package(
   INCLUDE_DIRS include
-  CATKIN_DEPENDS roscpp robotis_controller_msgs rh_p12_rn_a_base_module_msgs qt_build
+  CATKIN_DEPENDS roscpp robotis_controller_msgs rh_p12_rn_a_base_module_msgs
 )
+
+set(rh_p12_rn_a_gui_INCLUDE_DIRS
+  "${CATKIN_DEVEL_PREFIX}/${CATKIN_GLOBAL_INCLUDE_DESTINATION}/${PROJECT_NAME}"
+)
+if(NOT EXISTS ${rh_p12_rn_a_gui_INCLUDE_DIRS})
+  file(MAKE_DIRECTORY ${rh_p12_rn_a_gui_INCLUDE_DIRS})
+endif()
+set(_cmake_current_binary_dir "${CMAKE_CURRENT_BINARY_DIR}")
+set(CMAKE_CURRENT_BINARY_DIR ${rh_p12_rn_a_gui_INCLUDE_DIRS})
+set(QT_FORMS
+  ui/main_window.ui
+)
+qt5_wrap_ui(QT_FORMS_HPP ${QT_FORMS})
+set(CMAKE_CURRENT_BINARY_DIR "${_cmake_current_binary_dir}")
 
 ################################################################################
 # Build
 ################################################################################
 include_directories(
   include
+  ${rh_p12_rn_a_gui_INCLUDE_DIRS}
   ${catkin_INCLUDE_DIRS}
 )
 
-rosbuild_prepare_qt4(QtCore QtGui)
+set(QT_MOC
+  include/${PROJECT_NAME}/main_window.hpp
+  include/${PROJECT_NAME}/qnode.hpp
+)
+qt5_wrap_cpp(QT_MOC_HPP ${QT_MOC})
 
-file(GLOB_RECURSE QT_SOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} FOLLOW_SYMLINKS src/*.cpp)
-file(GLOB_RECURSE QT_MOC RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} FOLLOW_SYMLINKS include/rh_p12_rn_a_gui/*.hpp)
-file(GLOB QT_FORMS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} ui/*.ui)
-file(GLOB QT_RESOURCES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} resources/*.qrc)
+set(QT_RESOURCES
+  resources/images.qrc
+)
+qt5_add_resources(QT_RESOURCES_CPP ${QT_RESOURCES})
 
-QT4_ADD_RESOURCES(QT_RESOURCES_CPP ${QT_RESOURCES})
-QT4_WRAP_UI(QT_FORMS_HPP ${QT_FORMS})
-QT4_WRAP_CPP(QT_MOC_HPP ${QT_MOC})
+set(QT_SRCS
+  src/main_window.cpp
+  src/main.cpp
+  src/qnode.cpp
+)
 
-add_executable(rh_p12_rn_a_gui ${QT_SOURCES} ${QT_RESOURCES_CPP} ${QT_FORMS_HPP} ${QT_MOC_HPP})
+add_executable(rh_p12_rn_a_gui ${QT_RESOURCES_CPP} ${QT_SRCS} ${QT_FORMS_HPP} ${QT_MOC_HPP})
 add_dependencies(rh_p12_rn_a_gui ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(rh_p12_rn_a_gui ${QT_LIBRARIES} ${catkin_LIBRARIES})
+target_link_libraries(rh_p12_rn_a_gui Qt5::Widgets ${catkin_LIBRARIES})
 
 #################################################################################
 ## Install
