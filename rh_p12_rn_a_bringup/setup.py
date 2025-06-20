@@ -4,7 +4,7 @@ import os
 from setuptools import find_packages
 from setuptools import setup
 
-package_name = 'open_manipulator_bringup'
+package_name = 'rh_p12_rn_a_bringup'
 
 setup(
     name=package_name,

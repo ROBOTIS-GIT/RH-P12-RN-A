@@ -38,15 +38,15 @@ def generate_launch_description():
         get_package_share_directory('rh_p12_rn_a_description')
     )
 
-    open_manipulator_bringup_path = os.path.join(
-        get_package_share_directory('open_manipulator_bringup')
+    rh_p12_rn_a_bringup_path = os.path.join(
+        get_package_share_directory('rh_p12_rn_a_bringup')
     )
 
     # Set gazebo sim resource path
     gazebo_resource_path = SetEnvironmentVariable(
         name='GZ_SIM_RESOURCE_PATH',
         value=[
-            os.path.join(open_manipulator_bringup_path, 'worlds'),
+            os.path.join(rh_p12_rn_a_bringup_path, 'worlds'),
             ':' + str(Path(rh_p12_rn_a_description_path).parent.resolve()),
         ],
     )
@@ -140,7 +140,7 @@ def generate_launch_description():
     )
 
     # rviz_config_file = os.path.join(
-    #     open_manipulator_description_path, 'rviz', 'open_manipulator.rviz'
+    #     rh_p12_rn_a_description_path, 'rviz', 'rh_p12_rn_a.rviz'
     # )
 
     # rviz = Node(
