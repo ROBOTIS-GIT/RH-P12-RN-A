@@ -38,7 +38,7 @@
         </hardware>
       </xacro:unless>
 
-      <joint name="${prefix}rh_r1_joint">
+      <joint name="${prefix}rh_r1">
         <command_interface name="position"/>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
@@ -46,7 +46,7 @@
       </joint>
       <xacro:if value="$(arg use_sim)">
         <joint name="${prefix}rh_r2">
-          <param name="mimic">${prefix}rh_r1_joint</param>
+          <param name="mimic">${prefix}rh_r1</param>
           <param name="multiplier">1</param>
           <state_interface name="position"/>
           <state_interface name="velocity"/>
@@ -55,7 +55,7 @@
           <state_interface name="hardware_state"/>
         </joint>
         <joint name="${prefix}rh_l1">
-          <param name="mimic">${prefix}rh_r1_joint</param>
+          <param name="mimic">${prefix}rh_r1</param>
           <param name="multiplier">1</param>
           <state_interface name="position"/>
           <state_interface name="velocity"/>
@@ -64,7 +64,7 @@
           <state_interface name="hardware_state"/>
         </joint>
         <joint name="${prefix}rh_l2">
-          <param name="mimic">${prefix}rh_r1_joint</param>
+          <param name="mimic">${prefix}rh_r1</param>
           <param name="multiplier">1</param>
           <state_interface name="position"/>
           <state_interface name="velocity"/>
@@ -81,6 +81,11 @@
         <state_interface name="Present Current"/>
         <param name="type">dxl</param>
         <param name="ID">1</param>
+        <param name="Return Delay Time">0</param>
+        <param name="Min Position Limit">0</param>
+        <param name="Max Position Limit">740</param>
+        <param name="Profile Acceleration">0</param>
+        <param name="Profile Velocity">0</param>
       </gpio>
 
     </ros2_control>
