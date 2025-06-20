@@ -116,7 +116,7 @@
       <axis xyz="-1 0 0"/>
       <limit velocity="6.5" effort="1000" lower="-0.001" upper="1.101" />
       <dynamics damping="0.7"/>
-      <mimic joint="${prefix}rh_r1_joint" multiplier="1"/>
+      <mimic joint="${prefix}rh_r1" multiplier="1"/>
     </joint>
 
     <!-- rh_p12_rn_l1 -->
@@ -153,7 +153,7 @@
       <axis xyz="1 0 0"/>
       <limit velocity="6.5" effort="1000" lower="-0.001" upper="1.101" />
       <dynamics damping="0.7"/>
-      <mimic joint="${prefix}rh_r1_joint" multiplier="1"/>
+      <mimic joint="${prefix}rh_r1" multiplier="1"/>
     </joint>
 
     <!-- rh_p12_rn_l2 -->

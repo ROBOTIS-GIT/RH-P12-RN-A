@@ -13,4 +13,4 @@
 /**:
   gripper_controller:
     ros__parameters:
-      joint: rh_r1_joint
+      joint: rh_r1

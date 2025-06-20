@@ -34,7 +34,7 @@
   <xacro:Link reference="${prefix}rh_p12_rn_l1"/>
   <xacro:Link reference="${prefix}rh_p12_rn_l2"/>
 
-  <xacro:SimpleTransmission trans="${prefix}tran_r1" joint="${prefix}rh_r1_joint" actuator="${prefix}actuator1" />
+  <xacro:SimpleTransmission trans="${prefix}tran_r1" joint="${prefix}rh_r1" actuator="${prefix}actuator1" />
   <xacro:SimpleTransmission trans="${prefix}tran_r2" joint="${prefix}rh_r2" actuator="${prefix}actuator2" />
   <xacro:SimpleTransmission trans="${prefix}tran_l1" joint="${prefix}rh_l1" actuator="${prefix}actuator3" />
   <xacro:SimpleTransmission trans="${prefix}tran_l2" joint="${prefix}rh_l2" actuator="${prefix}actuator4" />
