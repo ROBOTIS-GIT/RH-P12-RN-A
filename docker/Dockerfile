@@ -1,5 +1,5 @@
 # Use the base ROS2 Jazzy image
-FROM ros:jazzy-ros-base AS rh_p12_rn_a
+FROM ros:jazzy-ros-base AS rh-p12-rn-a
 
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive

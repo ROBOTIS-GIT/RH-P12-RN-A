@@ -14,3 +14,4 @@
   gripper_controller:
     ros__parameters:
       joint: rh_r1
+      allow_stalling: true

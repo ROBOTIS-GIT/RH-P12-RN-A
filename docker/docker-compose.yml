@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: robotis/rh_p12_rn_a:latest
+    image: robotis/rh-p12-rn-a:latest
     tty: true
     restart: always
     cap_add:
