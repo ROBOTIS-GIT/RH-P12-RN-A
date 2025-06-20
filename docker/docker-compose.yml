@@ -22,6 +22,6 @@ services:
       - ./workspace:/workspace
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - /tmp/.docker.xauth:/tmp/.docker.xauth:rw
-      - ../:/root/ros2_ws/src/rh_p12_rn_a/
+      - ../:/root/ros2_ws/src/RH-P12-RN-A/
     privileged: true
     command: bash
