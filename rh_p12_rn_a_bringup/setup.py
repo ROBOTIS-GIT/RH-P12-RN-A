@@ -23,7 +23,7 @@ setup(
     zip_safe=True,
     maintainer='Pyo',
     maintainer_email='pyo@robotis.com',
-    description='OpenMANIPULATOR bringup ROS 2 package.',
+    description='RH-P12-RN-A bringup ROS 2 package.',
     license='Apache 2.0',
     tests_require=['pytest'],
     entry_points={

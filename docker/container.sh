@@ -30,7 +30,7 @@ start_container() {
         echo "Warning: DISPLAY environment variable is not set. X11 forwarding will not be available."
     fi
 
-    echo "Starting Open Manipulator container..."
+    echo "Starting container..."
 
     # Run docker-compose
     docker compose -f "${SCRIPT_DIR}/docker-compose.yml" up -d
