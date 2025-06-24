@@ -1,4 +1,4 @@
-# Use the base ROS2 Jazzy image
+# Use the base ROS 2 Jazzy image
 FROM ros:jazzy-ros-base AS rh-p12-rn-a
 
 # Set environment variables
@@ -12,7 +12,7 @@ RUN mkdir -p ${COLCON_WS}/src && \
     git clone -b jazzy https://github.com/ROBOTIS-GIT/dynamixel_hardware_interface.git && \
     git clone -b jazzy https://github.com/ROBOTIS-GIT/dynamixel_interfaces.git && \
     git clone -b jazzy https://github.com/ROBOTIS-GIT/DynamixelSDK.git && \
-    git clone -b feature-ros2 https://github.com/ROBOTIS-GIT/RH-P12-RN-A.git
+    git clone -b jazzy https://github.com/ROBOTIS-GIT/RH-P12-RN-A.git
 
 RUN cd ${COLCON_WS} && \
     apt-get update && \
