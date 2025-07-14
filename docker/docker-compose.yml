@@ -1,0 +1,27 @@
+services:
+  rh_p12_rn_a:
+    container_name: rh_p12_rn_a
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: robotis/rh-p12-rn-a:latest
+    tty: true
+    restart: always
+    cap_add:
+      - SYS_NICE
+    ulimits:
+      rtprio: 99
+      rttime: -1
+      memlock: 8428281856
+    network_mode: host
+    environment:
+     - DISPLAY=${DISPLAY}
+     - QT_X11_NO_MITSHM=1
+    volumes:
+      - /dev:/dev
+      - ./workspace:/workspace
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - /tmp/.docker.xauth:/tmp/.docker.xauth:rw
+      - ../:/root/ros2_ws/src/RH-P12-RN-A/
+    privileged: true
+    command: bash
