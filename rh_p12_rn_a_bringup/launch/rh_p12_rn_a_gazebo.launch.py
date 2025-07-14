@@ -108,7 +108,8 @@ def generate_launch_description():
             '-name',
             'rh_p12_rn_a',
             '-allow_renaming',
-            'true-use_sim',
+            'true',
+            '-use_sim',
             'true',
         ],
     )
